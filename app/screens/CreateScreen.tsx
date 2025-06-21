@@ -1,9 +1,33 @@
-import { View, Text, ScrollView, TouchableOpacity, TextInput } from 'react-native';
+import {
+  View,
+  Text,
+  ScrollView,
+  TouchableOpacity,
+  TextInput,
+} from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
-import { Camera, Mic, Image, FileText, Music, Video, Sparkles } from 'lucide-react-native';
+import {
+  Camera,
+  Mic,
+  Image,
+  FileText,
+  Music,
+  Video,
+  Sparkles,
+} from 'lucide-react-native';
 import { LinearGradient } from 'expo-linear-gradient';
 
-const createOptions = [
+import type { ColorValue } from 'react-native';
+import { JSX } from 'react';
+
+type CreateOption = {
+  icon: JSX.Element;
+  title: string;
+  subtitle: string;
+  gradient: [ColorValue, ColorValue];
+};
+
+const createOptions: CreateOption[] = [
   {
     icon: <Camera size={24} color="white" />,
     title: 'Photo Journal',
@@ -59,7 +83,9 @@ export default function CreateScreen() {
         <View className="px-6 py-4">
           <View className="flex-row items-center mb-2">
             <Sparkles size={24} color="#8b5cf6" />
-            <Text className="text-2xl font-inter-bold text-gray-900 ml-2">Create</Text>
+            <Text className="text-2xl font-inter-bold text-gray-900 ml-2">
+              Create
+            </Text>
           </View>
           <Text className="text-base font-inter text-gray-600">
             Express yourself and capture your journey
@@ -68,7 +94,9 @@ export default function CreateScreen() {
 
         {/* Quick Start */}
         <View className="px-6 py-4">
-          <Text className="text-xl font-inter-semibold text-gray-900 mb-4">Quick Start</Text>
+          <Text className="text-xl font-inter-semibold text-gray-900 mb-4">
+            Quick Start
+          </Text>
           <View className="bg-gradient-to-r from-purple-50 to-pink-50 p-6 rounded-2xl border border-purple-100 mb-6">
             <Text className="text-lg font-inter-semibold text-gray-900 mb-2">
               How are you feeling today?
@@ -89,7 +117,9 @@ export default function CreateScreen() {
 
         {/* Create Options */}
         <View className="px-6 py-4">
-          <Text className="text-xl font-inter-semibold text-gray-900 mb-4">Create Something New</Text>
+          <Text className="text-xl font-inter-semibold text-gray-900 mb-4">
+            Create Something New
+          </Text>
           <View className="space-y-4">
             {createOptions.map((option, index) => (
               <TouchableOpacity key={index}>
@@ -118,7 +148,9 @@ export default function CreateScreen() {
 
         {/* Templates */}
         <View className="px-6 py-4 pb-8">
-          <Text className="text-xl font-inter-semibold text-gray-900 mb-4">Templates</Text>
+          <Text className="text-xl font-inter-semibold text-gray-900 mb-4">
+            Templates
+          </Text>
           <Text className="text-sm font-inter text-gray-600 mb-4">
             Get started with guided prompts and structures
           </Text>
@@ -138,18 +170,28 @@ export default function CreateScreen() {
 
         {/* Recent Drafts */}
         <View className="px-6 py-4 pb-8">
-          <Text className="text-xl font-inter-semibold text-gray-900 mb-4">Recent Drafts</Text>
+          <Text className="text-xl font-inter-semibold text-gray-900 mb-4">
+            Recent Drafts
+          </Text>
           <View className="space-y-3">
             {[
-              { title: 'Morning thoughts...', time: '2 hours ago', type: 'Text' },
+              {
+                title: 'Morning thoughts...',
+                time: '2 hours ago',
+                type: 'Text',
+              },
               { title: 'Sunset photo', time: '1 day ago', type: 'Photo' },
               { title: 'Voice memo', time: '3 days ago', type: 'Audio' },
             ].map((draft, index) => (
               <TouchableOpacity key={index}>
                 <View className="bg-gray-50 p-4 rounded-xl flex-row justify-between items-center">
                   <View className="flex-1">
-                    <Text className="font-inter-medium text-gray-900">{draft.title}</Text>
-                    <Text className="font-inter text-gray-600 text-sm">{draft.time}</Text>
+                    <Text className="font-inter-medium text-gray-900">
+                      {draft.title}
+                    </Text>
+                    <Text className="font-inter text-gray-600 text-sm">
+                      {draft.time}
+                    </Text>
                   </View>
                   <Text className="font-inter-semibold text-joy-purple text-sm">
                     {draft.type}

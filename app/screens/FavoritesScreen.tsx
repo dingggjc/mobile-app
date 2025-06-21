@@ -17,7 +17,8 @@ const favoriteItems = [
     duration: '15 min',
     rating: 4.8,
     lastUsed: '2 days ago',
-    image: 'https://images.pexels.com/photos/3822622/pexels-photo-3822622.jpeg?auto=compress&cs=tinysrgb&w=400',
+    image:
+      'https://images.pexels.com/photos/3822622/pexels-photo-3822622.jpeg?auto=compress&cs=tinysrgb&w=400',
     instructor: 'Sarah Johnson',
   },
   {
@@ -27,7 +28,8 @@ const favoriteItems = [
     duration: '30 min',
     rating: 4.9,
     lastUsed: '1 week ago',
-    image: 'https://images.pexels.com/photos/416809/pexels-photo-416809.jpeg?auto=compress&cs=tinysrgb&w=400',
+    image:
+      'https://images.pexels.com/photos/416809/pexels-photo-416809.jpeg?auto=compress&cs=tinysrgb&w=400',
     instructor: 'Mike Chen',
   },
   {
@@ -37,7 +39,8 @@ const favoriteItems = [
     duration: '10 min',
     rating: 4.7,
     lastUsed: '3 days ago',
-    image: 'https://images.pexels.com/photos/1051838/pexels-photo-1051838.jpeg?auto=compress&cs=tinysrgb&w=400',
+    image:
+      'https://images.pexels.com/photos/1051838/pexels-photo-1051838.jpeg?auto=compress&cs=tinysrgb&w=400',
     instructor: 'Emma Wilson',
   },
   {
@@ -47,7 +50,8 @@ const favoriteItems = [
     duration: '45 min',
     rating: 4.8,
     lastUsed: '1 day ago',
-    image: 'https://images.pexels.com/photos/1246437/pexels-photo-1246437.jpeg?auto=compress&cs=tinysrgb&w=400',
+    image:
+      'https://images.pexels.com/photos/1246437/pexels-photo-1246437.jpeg?auto=compress&cs=tinysrgb&w=400',
     instructor: 'David Kim',
   },
   {
@@ -57,7 +61,8 @@ const favoriteItems = [
     duration: '20 min',
     rating: 4.9,
     lastUsed: '5 days ago',
-    image: 'https://images.pexels.com/photos/317157/pexels-photo-317157.jpeg?auto=compress&cs=tinysrgb&w=400',
+    image:
+      'https://images.pexels.com/photos/317157/pexels-photo-317157.jpeg?auto=compress&cs=tinysrgb&w=400',
     instructor: 'Lisa Rodriguez',
   },
 ];
@@ -69,8 +74,12 @@ export default function FavoritesScreen() {
         {/* Header */}
         <View className="flex-row justify-between items-center px-6 py-4">
           <View>
-            <Text className="text-2xl font-inter-bold text-gray-900">Favorites</Text>
-            <Text className="text-base font-inter text-gray-600">Your saved content</Text>
+            <Text className="text-2xl font-inter-bold text-gray-900">
+              Favorites
+            </Text>
+            <Text className="text-base font-inter text-gray-600">
+              Your saved content
+            </Text>
           </View>
           <TouchableOpacity className="p-2 bg-gray-100 rounded-full">
             <Filter size={20} color="#6b7280" />
@@ -97,8 +106,8 @@ export default function FavoritesScreen() {
                   </Text>
                   <Text
                     className={`ml-2 text-xs px-2 py-1 rounded-full ${
-                      category.active 
-                        ? 'bg-white/20 text-white' 
+                      category.active
+                        ? 'bg-white/20 text-white'
                         : 'bg-gray-200 text-gray-600'
                     }`}
                   >
@@ -114,23 +123,37 @@ export default function FavoritesScreen() {
         <View className="mx-6 mb-6 p-4 bg-gradient-to-r from-purple-50 to-pink-50 rounded-2xl border border-purple-100">
           <View className="flex-row justify-between items-center">
             <View className="items-center">
-              <Text className="text-2xl font-inter-bold text-joy-purple">24</Text>
-              <Text className="text-sm font-inter text-gray-600">Total Favorites</Text>
+              <Text className="text-2xl font-inter-bold text-joy-purple">
+                24
+              </Text>
+              <Text className="text-sm font-inter text-gray-600">
+                Total Favorites
+              </Text>
             </View>
             <View className="items-center">
-              <Text className="text-2xl font-inter-bold text-joy-purple">12</Text>
-              <Text className="text-sm font-inter text-gray-600">This Month</Text>
+              <Text className="text-2xl font-inter-bold text-joy-purple">
+                12
+              </Text>
+              <Text className="text-sm font-inter text-gray-600">
+                This Month
+              </Text>
             </View>
             <View className="items-center">
-              <Text className="text-2xl font-inter-bold text-joy-purple">4.8</Text>
-              <Text className="text-sm font-inter text-gray-600">Avg Rating</Text>
+              <Text className="text-2xl font-inter-bold text-joy-purple">
+                4.8
+              </Text>
+              <Text className="text-sm font-inter text-gray-600">
+                Avg Rating
+              </Text>
             </View>
           </View>
         </View>
 
         {/* Recently Added */}
         <View className="px-6 mb-6">
-          <Text className="text-xl font-inter-semibold text-gray-900 mb-4">Recently Added</Text>
+          <Text className="text-xl font-inter-semibold text-gray-900 mb-4">
+            Recently Added
+          </Text>
           <ScrollView horizontal showsHorizontalScrollIndicator={false}>
             {favoriteItems.slice(0, 3).map((item) => (
               <TouchableOpacity key={item.id} className="mr-4">
@@ -178,7 +201,9 @@ export default function FavoritesScreen() {
 
         {/* All Favorites */}
         <View className="px-6 pb-8">
-          <Text className="text-xl font-inter-semibold text-gray-900 mb-4">All Favorites</Text>
+          <Text className="text-xl font-inter-semibold text-gray-900 mb-4">
+            All Favorites
+          </Text>
           <View className="space-y-4">
             {favoriteItems.map((item) => (
               <TouchableOpacity key={item.id}>
